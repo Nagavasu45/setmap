@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Q1.	"Problem:
+    You are given a string (STR) of length N, consisting of only the lower case English alphabet.
+    Your task is to remove all the duplicate occurrences of characters in the string.
+
+    Input:
+    abcadeecfb
+
+    Output:
+    abcdef"
+</h2>
+<pre>
+    <h2>
+        function duplicates(N){
+            let res=new Set();    
+            for (let i= 0; i< N.length; i++){
+                res.add(N[i])
+            }
+        return Array.from(res).join('');
+    }
+console.log(duplicates("abcadeecfb"))
+</h2>
+</pre>
+
+    
+    
+
+<h3>Explaination:Here we have to solve the remove the duplicate lettes from the string..so i have used set() method for filtering
+    like duplicates values not allow to store in set list...then i have pushed one by one letter to set() then we get set list
+    but i have to convert the set list into string format soo i used Array.from(set_variable).join() then we get proper output
+</h3>
+<h3>output:abcdef</h3>
+<h2>Q2.	"Problem:
+    You are given a string (STR) of length N, you have to print the count of all alphabet.(using maps)
+    
+    Input:
+    abcadeecfb
+    
+    Output:
+    a=2
+    b=2
+    c=2
+    d=1
+    e=2
+    f=1"
+
+</h2>
+<h2>
+    <pre>
+        function countings(N){
+            let res= new Map()
+            for(let char of N){
+                if(res.has(char)){
+                    res.set(char,res.get(char)+1)
+                }
+                else{
+                    res.set(char,1)
+                }
+            }
+            let output=Array.from(res.keys())
+            for(let key of output){
+                console.log(`${key} = `+ res.get(key))
+            }
+        }
+        countings("abcdabcd")
+    </pre>
+</h2>
+<h3>Explaination:here we have  to print the count of all alphabet using map() and get char one by one through using for loop
+    and in map() we have set and get methods set for assign the key, value and get for getting value of key
+
+</h3>
+
+</body>
+</html>
